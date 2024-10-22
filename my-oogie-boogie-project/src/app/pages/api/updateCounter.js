@@ -1,11 +1,24 @@
 export default async function handler(req, res) {
   if (req.method === "POST") {
-    // 在這裡更新 Cloudflare R2 中的計數器
-    // 這裡假設您已經設置了與 R2 的連接
-    // 例如，使用 fetch 或其他 HTTP 客戶端來更新計數器
+    try {
+      // 調用 Cloudflare Worker 來更新計數器
+      const response = await fetch(
+        "https://oogieboogie.twister5-partner-demo-account5604.workers.dev/",
+        {
+          method: "POST",
+        }
+      );
 
-    // 假設更新成功
-    res.status(200).json({ message: "計數器已更新" });
+      if (response.ok) {
+        const data = await response.json();
+        res.status(200).json(data);
+      } else {
+        res.status(500).json({ message: "Failed to update counter" });
+      }
+    } catch (error) {
+      console.error("Error updating counter:", error);
+      res.status(500).json({ message: "Internal Server Error" });
+    }
   } else {
     res.setHeader("Allow", ["POST"]);
     res.status(405).end(`Method ${req.method} Not Allowed`);
