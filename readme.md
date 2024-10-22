@@ -6,7 +6,7 @@
 
 - [安裝](#安裝)
 - [使用方法](#使用方法)
-- [技術棧](#技術棧)
+- [tech_spec](#tech_spec)
 - [貢獻](#貢獻)
 - [授權](#授權)
 
@@ -43,7 +43,7 @@
 
 3. 點擊按鈕以顯示 GIF 並更新打擊次數。
 
-## tech spec
+## tech_spec
 
 - [Next.js](https://nextjs.org/) - React 框架
 - [Cloudflare R2](https://www.cloudflare.com/products/r2/) - 用於存儲打擊次數
