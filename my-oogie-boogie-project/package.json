@@ -10,8 +10,8 @@
   },
   "dependencies": {
     "axios": "^1.8.3",
-    "next": "15.2.4",
-    "react": "19.1.1",
+    "next": "15.4.6",
+    "react": "19.0.0-rc-65a56d0e-20241020",
     "react-dom": "19.0.0-rc-65a56d0e-20241020"
   },
   "devDependencies": {
